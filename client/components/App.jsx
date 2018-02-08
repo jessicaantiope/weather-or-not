@@ -1,11 +1,11 @@
 import React from 'react'
 
-import CityList from './CityList'
-import WeatherDetails from './WeatherDetails'
+// import CityList from './CityList'
+// import WeatherDetails from './WeatherDetails'
 
-export default class App extends React.Component{
-  constructor (props){
-    super (props)
+export default class App extends React.Component {
+  constructor (props) {
+    super(props)
     this.state = {
 // states got here
     }
@@ -13,9 +13,9 @@ export default class App extends React.Component{
   }
 // functions go here
   render () {
-    return ( 
+    return (
       <div>
-//what we want on the page
+        <h1>Hello team weather</h1>
       </div>
     )
   }
