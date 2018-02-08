@@ -1,3 +1,3 @@
 import request from 'superagent'
 
-const baseUrl =
+// const baseUrl =
