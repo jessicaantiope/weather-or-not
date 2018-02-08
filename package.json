@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch server server/index & webpack --watch",
-    "postinstall": "yarn webpack"
+    "postinstall": "yarn webpack",
+    "start": "node server/index.js"
   },
   "babel": {
     "presets": [
