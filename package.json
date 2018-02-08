@@ -6,6 +6,12 @@
   "scripts": {
     "dev": "nodemon --watch server server/index & webpack --watch"
   },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
   "repository": "https://github.com/kahu-2018/weather-or-not.git",
   "author": "kahu2018 <fake@fake.com>",
   "license": "MIT",
@@ -23,6 +29,7 @@
     "path": "^0.12.7",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
     "superagent": "^3.8.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"
