@@ -1,32 +1,32 @@
 import React from 'react'
 
 import WeatherDetails from './WeatherDetails'
-import {getCities} from './db.json'
+import cities from '../../public/data.js'
 
 export default class CityList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       detailsVisible: false,
-      cities: [],
+      citiesArray: [],
       city: null
     }
     this.toggleVisibility = this.toggleVisibility.bind(this)
     this.setCity = this.setCity.bind(this)
   }
   toggleVisibility() {
-    setCity()
-    set.State({detailsVisible: true})
+    this.setCity()
+    this.setState({detailsVisible: true})
   }
 
   setCity() {
-    set.State({city: e.target.value})
+    this.setState({city: e.target.value})
+    console.log(this.state.city)
   }
   
-  getCities() {
-    set.State({ cities: getCities() })
+  componentDidMount() {
+    this.setState({citiesArray: cities})
   }
-
  
   render() {
     return (
@@ -34,12 +34,10 @@ export default class CityList extends React.Component {
         
         <select className= "dropdown" onChange={this.toggleVisibility}>
           <option>Select a city</option>
-          {this.state.cities.map(city => <option>{cities}</option>)}
-
+          {this.state.citiesArray.map(city => <option>{city.name}</option>)}
         </select>
       
-      {this.state.detailsVisible && <WeatherDetails 
-      name= />}
+      {this.state.detailsVisible && <WeatherDetails />}
       
       </div>
     )
