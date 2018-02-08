@@ -4,7 +4,8 @@
   "description": "weather around the world",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch server server/index & webpack --watch"
+    "dev": "nodemon --watch server server/index & webpack --watch",
+    "postinstall": "webpack"
   },
   "babel": {
     "presets": [
