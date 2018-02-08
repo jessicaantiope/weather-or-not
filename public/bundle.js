@@ -18396,7 +18396,8 @@ var CityList = function (_React$Component) {
     key: 'setCity',
     value: function setCity() {
       this.setState({ city: e.target.value });
-      console.log(this.state.city);
+      // console.log(this.state.city)
+      this.setState({ coords: citiesArray.city.coords });
     }
   }, {
     key: 'componentDidMount',

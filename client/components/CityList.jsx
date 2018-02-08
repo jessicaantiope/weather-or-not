@@ -21,9 +21,11 @@ export default class CityList extends React.Component {
 
   setCity() {
     this.setState({city: e.target.value})
-    console.log(this.state.city)
+    // console.log(this.state.city)
+    this.setState({ coords: citiesArray.city.coords})
   }
-  
+
+
   componentDidMount() {
     this.setState({citiesArray: cities})
   }
