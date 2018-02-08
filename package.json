@@ -1,0 +1,22 @@
+{
+  "name": "weather-or-not",
+  "version": "1.0.0",
+  "description": "weather around the world",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch server server/index & webpack --watch"
+  },
+  "repository": "https://github.com/kahu-2018/weather-or-not.git",
+  "author": "kahu2018 <fake@fake.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "nodemon": "^1.14.12",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "webpack": "^3.10.0"
+  }
+}
