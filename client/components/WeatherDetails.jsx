@@ -1,36 +1,41 @@
 import React from 'react'
 
 
-export default WeatherDetails (props) => {
-
+export default class WeatherDetails extends React.Component { 
+  constructor (props) {
+    super(props)
+    this.state = {}
+  }
+render () {
   return (
     <div>
-      <h1>{props.icon}</h1>
-      <img src={getImageLinkOf(props.icon)}></img>
+      <h1>{this.props.icon}</h1>
+      <img src={getImageLinkOf(this.props.icon)}></img>
       <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
         <tr>
           <td>Summary</td>
-          <td>{props.summary}</td>
+          <td>{this.props.summary}</td>
         </tr>
         <tr>
           <td>Probability</td>
-          <td>{props.precipProbability}</td>
+          <td>{this.props.precipProbability}</td>
         </tr>
         <tr>
           <td>Temperature</td>
-          <td>{props.temperature} Fahrenheit</td>
+          <td>{this.props.temperature} Fahrenheit</td>
         </tr>
         <tr>
           <td>Humidity</td>
-          <td>{Math.floor(props.humidity * 100)}%</td>
+          <td>{Math.floor(this.props.humidity * 100)}%</td>
         </tr>
         <tr>
           <td>windspeed</td>
-          <td>{props.windSpeed}</td>
+          <td>{this.props.windSpeed}</td>
         </tr>
       </table>
     </div>
   )
+  }
 }
 
 function getImageLinkOf(icon) {
@@ -49,4 +54,3 @@ function getImageLinkOf(icon) {
   }
 
 }
-
