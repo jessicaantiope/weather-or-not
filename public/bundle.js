@@ -18319,11 +18319,17 @@ var App = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'container' },
         _react2.default.createElement(
           'h1',
-          null,
-          'Hello team weather'
+          { className: 'title' },
+          'Weather Or Not?'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'h3',
+          { className: 'subtitle' },
+          ' Choose your city to see current weather:'
         ),
         _react2.default.createElement(_CityList2.default, null)
       );
@@ -18407,14 +18413,14 @@ var CityList = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'select is-rounded is-warning is-medium' },
         _react2.default.createElement(
           'select',
-          { className: 'dropdown', onChange: this.toggleVisibility },
+          { onChange: this.toggleVisibility },
           _react2.default.createElement(
             'option',
             null,
-            'Select a city'
+            'Select your city'
           ),
           this.state.citiesArray.map(function (city) {
             return _react2.default.createElement(

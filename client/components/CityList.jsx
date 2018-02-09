@@ -30,10 +30,10 @@ export default class CityList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="select is-rounded is-warning is-medium">
 
-        <select className= "dropdown" onChange={this.toggleVisibility}>
-          <option>Select a city</option>
+        <select onChange={this.toggleVisibility}>
+          <option>Select your city</option>
           {this.state.citiesArray.map(city => <option>{city.name}</option>)}
         </select>
 
