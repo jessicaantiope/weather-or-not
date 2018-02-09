@@ -1,6 +1,6 @@
 import React from 'react'
 
-// import CityList from './CityList'
+import CityList from './CityList'
 // import WeatherDetails from './WeatherDetails'
 
 export default class App extends React.Component {
@@ -16,6 +16,7 @@ export default class App extends React.Component {
     return (
       <div>
         <h1>Hello team weather</h1>
+        <CityList />
       </div>
     )
   }
