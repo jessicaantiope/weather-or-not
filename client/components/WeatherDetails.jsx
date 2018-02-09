@@ -4,13 +4,31 @@ import React from 'react'
 export default WeatherDetails (props) => {
 
   return (
-    <div><h1>{props.icon}</h1>
+    <div>
+      <h1>{props.icon}</h1>
       <img src={getImageLinkOf(props.icon)}></img>
-      <p>Summary: {props.summary}</p>
-      <p>Probability: {props.precipProbability}</p>
-      <p>Temperature: {props.temperature} Fahrenheit</p>
-      <p>Humidity: {Math.floor(props.humidity * 100)}%</p>
-      <p>windspeed: {props.windSpeed} </p>
+      <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <tr>
+          <td>Summary</td>
+          <td>{props.summary}</td>
+        </tr>
+        <tr>
+          <td>Probability</td>
+          <td>{props.precipProbability}</td>
+        </tr>
+        <tr>
+          <td>Temperature</td>
+          <td>{props.temperature} Fahrenheit</td>
+        </tr>
+        <tr>
+          <td>Humidity</td>
+          <td>{Math.floor(props.humidity * 100)}%</td>
+        </tr>
+        <tr>
+          <td>windspeed</td>
+          <td>{props.windSpeed}</td>
+        </tr>
+      </table>
     </div>
   )
 }
