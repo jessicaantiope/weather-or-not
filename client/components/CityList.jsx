@@ -12,7 +12,7 @@ export default class CityList extends React.Component {
     // binds go here
   }
   toggleVisibility() {
-    set.State({detailsVisible: true})
+    this.setState({detailsVisible: true})
   }
   // functions go here
   render() {
