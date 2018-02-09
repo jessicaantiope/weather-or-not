@@ -14,6 +14,7 @@ export default class CityList extends React.Component {
     this.toggleVisibility = this.toggleVisibility.bind(this)
     this.setCity = this.setCity.bind(this)
   }
+
   toggleVisibility(e) {
     this.setCity(e)
     this.setState({detailsVisible: true})
