@@ -18388,15 +18388,14 @@ var CityList = function (_React$Component) {
 
   _createClass(CityList, [{
     key: 'toggleVisibility',
-    value: function toggleVisibility() {
-      this.setCity();
+    value: function toggleVisibility(e) {
+      this.setCity(e);
       this.setState({ detailsVisible: true });
     }
   }, {
     key: 'setCity',
-    value: function setCity() {
+    value: function setCity(e) {
       this.setState({ city: e.target.value });
-      console.log(this.state.city);
     }
   }, {
     key: 'componentDidMount',

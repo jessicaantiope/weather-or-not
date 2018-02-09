@@ -14,31 +14,30 @@ export default class CityList extends React.Component {
     this.toggleVisibility = this.toggleVisibility.bind(this)
     this.setCity = this.setCity.bind(this)
   }
-  toggleVisibility() {
-    this.setCity()
+  toggleVisibility(e) {
+    this.setCity(e)
     this.setState({detailsVisible: true})
   }
 
-  setCity() {
+  setCity(e) {
     this.setState({city: e.target.value})
-    console.log(this.state.city)
   }
-  
+
   componentDidMount() {
     this.setState({citiesArray: cities})
   }
- 
+
   render() {
     return (
       <div>
-        
+
         <select className= "dropdown" onChange={this.toggleVisibility}>
           <option>Select a city</option>
           {this.state.citiesArray.map(city => <option>{city.name}</option>)}
         </select>
-      
+
       {this.state.detailsVisible && <WeatherDetails />}
-      
+
       </div>
     )
   }
