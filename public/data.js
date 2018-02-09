@@ -66,8 +66,4 @@ var WeatherIcons = [
     }
   ]
 
-function getCities() {
-  return cities
-}
-
 module.exports = cities

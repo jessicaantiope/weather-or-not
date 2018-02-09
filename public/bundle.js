@@ -18378,9 +18378,11 @@ var CityList = function (_React$Component) {
 
     _this.state = {
       detailsVisible: false,
-      citiesArray: [],
-      city: null
+      cityList: [],
+      city: '',
+      coords: ''
     };
+
     _this.toggleVisibility = _this.toggleVisibility.bind(_this);
     _this.setCity = _this.setCity.bind(_this);
     return _this;
@@ -18395,36 +18397,48 @@ var CityList = function (_React$Component) {
   }, {
     key: 'setCity',
     value: function setCity() {
-      this.setState({ city: e.target.value });
+      //this.setState({city: eventitit.target.value})
       // console.log(this.state.city)
-      this.setState({ coords: citiesArray.city.coords });
+
+      this.setState({ coords: _data2.default[this.state.city].coords });
+      console.log({ citiesArray: citiesArray });
+    }
+  }, {
+    key: 'getCityList',
+    value: function getCityList() {
+      console.log('cities: ', _data2.default);
+      return _data2.default.map(function (city) {
+        return _react2.default.createElement(
+          'option',
+          { key: city.name },
+          city.name
+        );
+      });
     }
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.setState({ citiesArray: _data2.default });
+      document.getElementById('selectCity').onchange = this.setCity;
+      this.setState(this.getCityList());
     }
   }, {
     key: 'render',
     value: function render() {
+      this.state.cityList = this.getCityList();
+      console.log('cityList:', this.state.cityList);
+
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
           'select',
-          { className: 'dropdown', onChange: this.toggleVisibility },
+          { id: 'selectCity', className: 'dropdown', onChange: this.toggleVisibility },
           _react2.default.createElement(
             'option',
             null,
             'Select a city'
           ),
-          this.state.citiesArray.map(function (city) {
-            return _react2.default.createElement(
-              'option',
-              null,
-              city.name
-            );
-          })
+          this.state.cityList
         ),
         this.state.detailsVisible && _react2.default.createElement(_WeatherDetails2.default, null)
       );
@@ -18520,10 +18534,6 @@ var WeatherIcons = [{
   "name": "sunny",
   "image": "./images/sunny.png"
 }];
-
-function getCities() {
-  return cities;
-}
 
 module.exports = cities;
 

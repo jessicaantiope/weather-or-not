@@ -8,35 +8,47 @@ export default class CityList extends React.Component {
     super(props)
     this.state = {
       detailsVisible: false,
-      citiesArray: [],
-      city: null
+      cityList: [],
+      city: '',
+      coords: ''
     }
+
     this.toggleVisibility = this.toggleVisibility.bind(this)
     this.setCity = this.setCity.bind(this)
   }
+
   toggleVisibility() {
     this.setCity()
     this.setState({detailsVisible: true})
   }
 
   setCity() {
-    this.setState({city: e.target.value})
+    //this.setState({city: eventitit.target.value})
     // console.log(this.state.city)
-    this.setState({ coords: citiesArray.city.coords})
+    
+    this.setState({ coords: cities[this.state.city].coords})
+    console.log({citiesArray})
   }
 
+  getCityList () {
+    console.log('cities: ', cities)
+    return cities.map(city => <option key={city.name} >{city.name}</option>)
+  }
 
   componentDidMount() {
-    this.setState({citiesArray: cities})
+    document.getElementById('selectCity').onchange = this.setCity
+    this.setState(this.getCityList())
   }
- 
+  
   render() {
+    this.state.cityList = this.getCityList()
+    console.log('cityList:', this.state.cityList)
+ 
     return (
       <div>
-        
-        <select className= "dropdown" onChange={this.toggleVisibility}>
+        <select id="selectCity" className= "dropdown" onChange={this.toggleVisibility}>
           <option>Select a city</option>
-          {this.state.citiesArray.map(city => <option>{city.name}</option>)}
+          {this.state.cityList}
         </select>
       
       {this.state.detailsVisible && <WeatherDetails />}
