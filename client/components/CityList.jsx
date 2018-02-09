@@ -32,7 +32,7 @@ export default class CityList extends React.Component {
 
   getCityList () {
     console.log('cities: ', cities)
-    return cities.map(city => <option key={city.name} >{city.name}</option>)
+    return cities.map(city => <option key={city.name} value={city.name} >{city.name}</option>)
   }
 
   componentDidMount() {
